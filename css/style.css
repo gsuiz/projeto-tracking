@@ -21,23 +21,59 @@ header{
 }
 
 .menubar{
-    height: 18px;
+    width: 30px;
+    height: 30px;
+    border-radius: 3px;
+    background-color: transparent;
+    border: 2px solid gray;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
 }
 
+.menubar__linha{
+    width: 75%;
+    height: 2px;
+    background-color: gray;
+    transform-origin:center;
+    transition: width .8s, transform .8s, background .8s;
+}
+
+.menubar.ativar .menubar__linha:first-of-type{
+    transform: translateY(7.3px) rotate(45deg);
+    background-color: #ff5e5e;
+}
+
+.menubar.ativar .menubar__linha:nth-of-type(2){
+    width: 0;
+}
+
+.menubar.ativar .menubar__linha:last-of-type{
+    transform: translateY(-7px) rotate(-45deg);
+    background-color: #ff5e5e;
+}
+
+.menubar.ativar{
+    border: 2px solid #ff5e5e;
+}
+
+.menubar.ativar .navlink-m{
+    display: block;
+}
+
+
 .navlink-m{
+    font-family: "Barlow Condensed", sans-serif;
+    font-weight: 700;
     position: absolute;
     right: 10%;
-    top: calc(50px - 15px);
+    top: calc(100px - 15px);
     width: 80%;
     max-width: 400px;
     display: none;
-}
-
-.close{
-    float: right;
-    width: 30px;
-    margin:0 0 12% 0;
-    cursor: pointer;
 }
 
 .clear{

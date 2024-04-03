@@ -1,5 +1,4 @@
 const menu = document.querySelector('#menu')
-const close = document.querySelector('#closemenu')
 const navlink = document.querySelector('#nav-m')
 const btn1 = document.querySelector('#btn-1')
 const btn2 = document.querySelector('#btn-2')
@@ -37,27 +36,9 @@ function sair(){
     link3.style.color = 'hsl(230, 29%, 20%)'
 }
 
-function hover(){
-    login.style.color = 'hsl(230, 29%, 20%)'
-    links[1].style.color = 'hsl(295, 11%, 77%)'
-}
-
-function out(){
-    login.style.color = 'hsl(295, 11%, 77%)'
-}
-
-menu.addEventListener('click', aparecer)
-close.addEventListener('click', sumir)
-
-function aparecer(){
-    menu.style.display = 'none'
-    navlink.style.display = 'block'
-}
-
-function sumir(){
-    menu.style.display = 'block'
-    navlink.style.display = 'none'
-}
+menu.addEventListener('click', () =>{
+    menu.classList.toggle('ativar')
+})
 
 btn1.addEventListener('click', aperta)
 btn2.addEventListener('click', aperta2)
